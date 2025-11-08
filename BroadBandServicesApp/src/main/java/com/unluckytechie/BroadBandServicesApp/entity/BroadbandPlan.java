@@ -21,5 +21,5 @@ public class BroadbandPlan {
     private String name;
     private double speedMbps;
     private double price;
-
+    private String area;
 }
