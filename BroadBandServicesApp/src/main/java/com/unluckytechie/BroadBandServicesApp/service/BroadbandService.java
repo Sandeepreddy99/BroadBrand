@@ -7,6 +7,7 @@ import java.util.List;
 public interface BroadbandService {
     public BroadbandPlan savePlan(BroadbandPlan broadbandPlan);
     public List<BroadbandPlan> getAllPlans();
+    public List<BroadbandPlan> getPlansByPlanType(String planType);
 
    public BroadbandPlan getPlanByID(Long id);
 

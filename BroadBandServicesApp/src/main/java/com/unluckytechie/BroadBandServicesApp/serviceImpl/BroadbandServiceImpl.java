@@ -40,8 +40,16 @@ private BroadbandPlanRepository broadbandPlanRepository;
         if(broadbandPlan.getPrice()!=0) {
             existingPlan.setPrice(broadbandPlan.getPrice());
         }
+        if(broadbandPlan.getPlanType()!=null && !broadbandPlan.getPlanType().isBlank()) {
+            existingPlan.setPlanType(broadbandPlan.getPlanType());
+        }
         broadbandPlanRepository.save(existingPlan);
         return existingPlan;
+    }
+
+    @Override
+    public List<BroadbandPlan> getPlansByPlanType(String planType) {
+        return broadbandPlanRepository.findByPlanType(planType);
     }
 
     @Override

@@ -22,6 +22,12 @@ public class BroadbandPlanController {
     public ResponseEntity<List<BroadbandPlan>> getAllPlans(){
         return new ResponseEntity<List<BroadbandPlan>>(broadbandService.getAllPlans(),HttpStatus.OK);
     }
+
+    @GetMapping("/type/{planType}")
+    public ResponseEntity<List<BroadbandPlan>> getPlansByType(@PathVariable("planType") String planType){
+        return new ResponseEntity<List<BroadbandPlan>>(broadbandService.getPlansByPlanType(planType),HttpStatus.OK);
+    }
+
     @GetMapping("{id}")
     public ResponseEntity<BroadbandPlan> getPlanById(@PathVariable("id") Long id){
         return new ResponseEntity<BroadbandPlan>(broadbandService.getPlanByID(id),HttpStatus.OK);
